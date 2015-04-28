@@ -1,0 +1,15 @@
+<h3>MTA Service Status</h3>
+
+{{#data}}
+<div class="departures">
+    <div class="destination">
+        <img src="/images/mta-nyc/{{line-name}}.gif" alt={{line-name}}>
+    </div>
+    <div class="departure {{status}}">{{status}}</div>
+    {{#text}}
+        <div class="service">
+            <marquee behavior="scroll" direction="left">{{text}}</marquee>
+        </div>
+    {{/text}}
+</div>
+{{/data}}

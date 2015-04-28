@@ -837,3 +837,56 @@ div#stock-price div.volume {
   font-size: 30px;
   align: center;
 }
+
+/* MTA NYC */
+div#plugins #mta-nyc h3 {
+  padding-bottom: 10px;
+}
+
+div#plugins #mta-nyc div.departures {
+  clear: left;
+  height: 45px;
+}
+
+div#plugins #mta-nyc div.destination {
+  width: 82px;
+  float: left;
+  padding: 5px;
+}
+
+div#plugins #mta-nyc div.departure {
+  float: left;
+  padding: 2px;
+  border-width: 5px;
+  border-style: solid;
+  width: 95px;
+  margin-right: 5px;
+}
+
+div#plugins #mta-nyc div.service{
+  float: left;
+  padding: 2px;
+  border-width: 5px;
+  border-style: solid;
+  width: 350px;
+  margin-right: 5px;
+}
+div#plugins #mta-nyc .blue {
+  border-color: #0099cc;
+}
+
+div#plugins #mta-nyc .green {
+  border-color: #339933;
+}
+
+div#plugins #mta-nyc .yellow {
+  border-color: #ffff33;
+}
+
+div#plugins #mta-nyc .orange {
+  border-color: #ff9933;
+}
+
+div#plugins #mta-nyc .red {
+  border-color: #ff0000;
+}
