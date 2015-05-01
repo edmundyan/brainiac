@@ -20,28 +20,36 @@
     "now"
     (str minutes "m")))
 
-(defn parse-text [text]
+(defn parse-text [text status]
   ; Only show the first line
   ; (.text (Jsoup/parse text)))
-  (pprint (str "parsing a line of text?"))
-  (pprint text)
-  (pprint (str "~~~~~~~DONE!~~~~~~~~~"))
-  (flush)
-
-
-  (join "* "
-    (enlive/texts
-      (enlive/select
-        (enlive/html-snippet text)
-        [:a.plannedWorkDetailLink])
+  (cond
+    (= status "PLANNED WORK")
+      (join "* "
+        (enlive/texts
+          (enlive/select
+            (enlive/html-snippet text)
+            [:a.plannedWorkDetailLink]
+          )
+        )
       )
-    )
-  )
+    (= status "SERVICE CHANGE")
+      (join "* "
+        (enlive/texts
+          (enlive/select
+            (enlive/html-snippet text)
+            [:p]
+          )
+        )
+      )
+  ))
+
 
 (defn parse-status [status]
   (case status
     "GOOD SERVICE" "green"
     "PLANNED WORK" "yellow"
+    "SERVICE CHANGE" "yellow"
     "DELAYS" "red"
     status))
 
@@ -52,7 +60,7 @@
     (assoc {}
            :line-name line-name
            :status (parse-status status)
-           :text (parse-text text))))
+           :text (parse-text text status))))
 
 (defn transform [stream]
   (let [xml-zipper (xml/parse-xml stream)]
