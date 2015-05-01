@@ -9,5 +9,6 @@
                  [commons-lang "2.6"]
                  [net.sourceforge.htmlcleaner/htmlcleaner "2.2"]
                  [overtone/at-at "0.2.1"]
-                 [noir "1.2.1"] ]
+                 [noir "1.2.1"]
+                 [enlive "1.1.5"]]
   :main brainiac.core)
